@@ -14,8 +14,8 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-KMF BOT is an Instagram bot that automates some options for you, there are seven options available now.Once you Register, you can run the bot and it will start building real, organic followers to your account (Mallu Followers).
-With KMF BOT, you can get average 150-200 followers every day. yet our BOT not violate any of Instagram's rules, so you don't have to worry about getting ACTION BLOCK !
+KMF BOT is an Instagram bot that automates some options for you, there are seven options available now. You can run the bot and it will start building real, organic followers to your account.
+With TemHunter, you can get average 150-200 followers every day. yet our BOT not violate any of Instagram's rules, so you don't have to worry about getting ACTION BLOCK !
 
 [Completely Free BOT]
 
