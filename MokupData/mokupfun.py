@@ -22,7 +22,7 @@ def colorText(text):
 
 #KMF LOGO OR ASSCCI HEADER
 def KMFHEADER():
-    f = open('./MokupData/' "KMFHEADER.txt","r")
+    f = open('./MokupData/' "KMFHeader.txt","r")
     KMFHEADER = "".join(f.readlines())
     print(colorText(KMFHEADER))
 
