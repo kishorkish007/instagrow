@@ -45,6 +45,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
+---
 ## License
 
 MIT License
@@ -75,7 +76,10 @@ SOFTWARE.
 - [Instagram](https://instagram.com/un_f__amour)
 - [Whatsapp Group](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
 - [Telegram](https://t.me/KMFBOT_OFFICIAL)
+---
 
 ## Donate
+
+If you love our work, Consider donating. 
 
 [PayPal](paypalme/ananthuganesh)
