@@ -12,9 +12,9 @@ from MokupData.mokupfun import *
 
 #Men@c
 bot = Bot(
-    max_likes_per_day=50,
-    max_follows_per_day=50,
-    max_unfollows_per_day=50,
+    max_likes_per_day=1000,
+    max_follows_per_day=1000,
+    max_unfollows_per_day=1000,
     min_likes_to_like=10,
     max_likes_to_like=10000000,
     like_delay=25,
