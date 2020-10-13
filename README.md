@@ -72,5 +72,10 @@ SOFTWARE.
 ---
 ## Author Info
 
-- Instsgram - [@un_f__amour](https://instagram.com/un_f__amour)
-- Whatsapp - [+91 9072717181](https://wa.me/message/5QY27CQDJGEUP1)
+- [Instagram](https://instagram.com/un_f__amour)
+- [Whatsapp Group](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
+- [Telegram](https://t.me/KMFBOT_OFFICIAL)
+
+## Donate
+
+[PayPal](paypalme/ananthuganesh)
