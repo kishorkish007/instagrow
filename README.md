@@ -75,7 +75,7 @@ SOFTWARE.
 ## Author Info
 
 - [Whatsapp Group](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
-- [Telegram](https://t.me/KMFBOT_OFFICIAL)
+- [Telegram Channel](https://t.me/KMFBOT_OFFICIAL)
 ---
 
 ## Donate
