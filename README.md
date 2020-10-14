@@ -74,7 +74,6 @@ SOFTWARE.
 ---
 ## Author Info
 
-- [Instagram](https://instagram.com/un_f__amour)
 - [Whatsapp Group](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
 - [Telegram](https://t.me/KMFBOT_OFFICIAL)
 ---
