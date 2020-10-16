@@ -37,9 +37,7 @@ def ig_teamhunter():
     TEAMHUNTER()
     userdata = input("\u001b[32m[+]\u001b[0m Enter Target Team username:-")
     print ("\u001b[33;1m-------------------------------------------------------\u001b[0m")
-    n = 70 #number of repeats
-    while n >= 0:
-        n -= 1
+    while True:
         bot.follow(userdata)
         time.sleep(220)
         bot.unfollow(userdata)
