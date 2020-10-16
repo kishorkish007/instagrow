@@ -137,7 +137,7 @@ def ig_rehashtag():
             time.sleep(60)               
     repeat() 
 
-#Infinity Feed Liker
+#Infinity Feed Like
 wait = 5 * 60  # in seconds
 def ig_feedliker():
     KMFHEADER()
