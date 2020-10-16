@@ -82,4 +82,4 @@ SOFTWARE.
 
 If you love our work, Consider donating. 
 
-[PayPal](paypalme/ananthuganesh)
+[PayPal](https://www.paypal.com/paypalme/ananthuganesh)
