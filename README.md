@@ -8,13 +8,14 @@ You're sections headers will be used to reference location of destination.
 - [How To Use](#how-to-use)
 - [License](#license)
 - [Author Info](#author-info)
+- [Donate](#donate)
 
 ---
 
 ## Description
 
-KMF BOT is an Instagram bot that automates some options for you, there are seven options available now.Once you Register, you can run the bot and it will start building real, organic followers to your account (Mallu Followers).
-With KMF BOT, you can get average 150-200 followers every day. yet our BOT not violate any of Instagram's rules, so you don't have to worry about getting ACTION BLOCK !
+KMF BOT is an Instagram bot that automates some options for you, there are seven options available now. You can run the bot and it will start building real, organic followers to your account.
+With TemHunter, you can get average 150-200 followers every day. yet our BOT not violate any of Instagram's rules, so you don't have to worry about getting ACTION BLOCK !
 
 [Completely Free BOT]
 
@@ -45,6 +46,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
+---
 ## License
 
 MIT License
@@ -72,5 +74,12 @@ SOFTWARE.
 ---
 ## Author Info
 
-- Instsgram - [@un_f__amour](https://instagram.com/un_f__amour)
-- Whatsapp - [+91 9072717181](https://wa.me/message/5QY27CQDJGEUP1)
+- [Whatsapp Group](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
+- [Telegram Channel](https://t.me/KMFBOT_OFFICIAL)
+---
+
+## Donate
+
+If you love our work, Consider donating. 
+
+[PayPal](https://www.paypal.com/paypalme/ananthuganesh)
