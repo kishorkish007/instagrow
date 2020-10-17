@@ -45,8 +45,10 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
----
-- [Tutorial Video](https://youtu.be/HY6f43iBD4k)
+- [Tutorial Video](https://youtu.be/HY6f43iBD4k) 
+
+
+Do Subscribe and Like For More Free Bot and Instagram Tricks and Tips
 
 ---
 
