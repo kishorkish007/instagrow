@@ -1,5 +1,5 @@
 ![kmfbanner](https://user-images.githubusercontent.com/58104674/95757141-60145280-0cc4-11eb-814f-6624d45dc077.jpg)
-# KMF_BOT ![Version](https://img.shields.io/badge/Version-3.5.1-green)
+# KMF_BOT ![Version](https://img.shields.io/badge/Version-3.5.1-green) ![MIT License]( https://img.shields.io/badge/license-MIT-brightgreen)
 ---
 ### Table of Contents
 You're sections headers will be used to reference location of destination.
