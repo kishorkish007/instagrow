@@ -80,10 +80,12 @@ SOFTWARE.
 
 ---
 # Author Info
-- <a href="https://www.instagram.com/un_f__amour/"><img src="https://user-images.githubusercontent.com/58104674/96376884-200b0f00-119f-11eb-82dd-b565ecd1c01c.png" align="left" height="30" ></a>
-- <a href="https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4"><img src="https://user-images.githubusercontent.com/58104674/96376927-66f90480-119f-11eb-9bfe-65ff88f0719f.png" align="left" height="30" ></a>
-- <a href="https://twitter.com/un_f__amour"><img src="https://user-images.githubusercontent.com/58104674/96376947-84c66980-119f-11eb-8661-9258c0f3ece4.png" align="left" height="30" ></a>
-- <a href="https://t.me/KMFBOT_OFFICIAL"><img src="https://user-images.githubusercontent.com/58104674/96376959-a162a180-119f-11eb-99e9-88ff48a53125.png" align="left" height="30" ></a>
+- [Instagram](https://www.instagram.com/un_f__amour/)
+- [Facebook](https://www.facebook.com/ananthu.ganesh.un/)
+- [Whatsapp](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
+- [Twitter](https://twitter.com/un_f__amour)
+- [Telegram](https://t.me/KMFBOT_OFFICIAL)
+
 ---
 
 # Donate
