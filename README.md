@@ -80,7 +80,7 @@ SOFTWARE.
 
 ---
 # Author Info
-- [[Instgram] https://img.shields.io/badge/license-MIT-brightgreen](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
+- [![Alt text for your video](https://www.flaticon.com/svg/static/icons/svg/174/174855.svg=250x250)](https://youtu.be/HY6f43iBD4k=VIDEO-ID "Watch Video Now!")
 - [Whatsapp Group](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
 - [Telegram Channel](https://t.me/KMFBOT_OFFICIAL)
 ---
