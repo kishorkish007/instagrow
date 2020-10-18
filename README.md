@@ -47,9 +47,7 @@ python main.py
 ```
 ---
 ## Tutorial Video
-![Thum](https://user-images.githubusercontent.com/58104674/96328427-89d0cf00-1060-11eb-909e-170bb8fc9d1e.jpg)
-- [Click Here To Watch Video](https://youtu.be/HY6f43iBD4k) 
-[![Alt text for your video](https://user-images.githubusercontent.com/58104674/96328427-89d0cf00-1060-11eb-909e-170bb8fc9d1e.jpg)](https://youtu.be/HY6f43iBD4k=VIDEO-ID "Put hover text here!")
+[![Alt text for your video](https://user-images.githubusercontent.com/58104674/96328427-89d0cf00-1060-11eb-909e-170bb8fc9d1e.jpg)](https://youtu.be/HY6f43iBD4k=VIDEO-ID "Watch Video Now!")
 
 Do Subscribe and Like For More Free Bot and Instagram Tricks and Tips
 
