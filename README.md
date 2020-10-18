@@ -88,7 +88,8 @@ SOFTWARE.
 ---
 
 # Donate
-
 If you love our work, Consider donating. 
 
-[PayPal](https://www.paypal.com/paypalme/ananthuganesh)
+<a href="https://www.paypal.com/paypalme/ananthuganesh"><img src="https://user-images.githubusercontent.com/58104674/96376549-39ab5700-119d-11eb-95fc-06dd8f417301.png" align="left" height="48" ></a>
+
+
