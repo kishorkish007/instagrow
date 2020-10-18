@@ -80,7 +80,9 @@ SOFTWARE.
 
 ---
 # Author Info
-- [![Alt text for your video](https://www.flaticon.com/svg/static/icons/svg/174/174855.svg=250x250)](https://youtu.be/HY6f43iBD4k=VIDEO-ID "Watch Video Now!")
+- [Instagram](https://www.instagram.com/un_f__amour)
+- [Twitter](https://twitter.com/un_f__amour)
+- [Website](https://www.instamojo.com/un_f__amour)
 - [Whatsapp Group](https://chat.whatsapp.com/HodrQitZNwX4tJoAd46OS4)
 - [Telegram Channel](https://t.me/KMFBOT_OFFICIAL)
 ---
