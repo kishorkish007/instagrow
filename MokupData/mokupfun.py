@@ -99,4 +99,16 @@ def FEEDLIKER():
     f = open('./MokupData/' "FEEDLIKER.txt","r")
     FEEDLIKER = "".join(f.readlines())
     print(colorText(FEEDLIKER))
-    
+
+#LOGOUT
+def LOGOUT():
+    f = open('./MokupData/' "LOGOUT.txt","r")
+    LOGOUT = "".join(f.readlines())
+    print(colorText(LOGOUT))
+
+
+#DIRECTMESSAGE
+def DIRECTMESSAGE():
+    f = open('./MokupData/' "DIRECTMESSAGE.txt","r")
+    DIRECTMESSAGE = "".join(f.readlines())
+    print(colorText(DIRECTMESSAGE))

@@ -1,0 +1,39 @@
+USERID_FOR_MASSLOOKER = [
+    "instagram",
+    "un_f__amour",
+    "cristiano",
+    "arianagrande",
+    "therock",
+    "kyliejenner",
+    "leomessi",
+    "beyonce",
+    "justinbieber",
+    "natgeo",
+    "neymarjr",
+    "taylorswift",
+    "kendalljenner",
+    "jlo",
+    "nickiminaj",
+    "khloekardashian",
+    "nike",
+    "mileycyrus",
+    "katyperry",
+    "selenagomez",
+    "priya.p.varrier"
+    ]
+
+USERID_FOR_INSHACKLE = [
+    "instagram",
+    "cristiano",
+    "therock",
+    "leomessi",
+    "natgeo",
+    "arianagrande",
+    "mileycyrus",
+    "beyonce",
+    "kyliejenner",
+    "natgeo",
+    "madonna",
+    "selenagomez",
+    "lelepons"
+    ]

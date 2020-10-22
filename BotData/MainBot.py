@@ -5,29 +5,33 @@ import sys
 import random
 from tqdm import tqdm
 import os
+from FunctionData.USER_DATABase import *
 
 #Importing Mi Functions
-from FunctionData.somefun import clear
+from FunctionData.somefun import *
 from MokupData.mokupfun import *
-
+from BotData.ConfiG import *
 #Men@c
 bot = Bot(
-    max_likes_per_day=1000,
-    max_follows_per_day=1000,
-    max_unfollows_per_day=1000,
+    max_likes_per_day=400,
+    max_follows_per_day=300,
+    max_unfollows_per_day=300,
+    max_messages_per_day=100,
+    max_comments_per_day=150,
     min_likes_to_like=10,
     max_likes_to_like=10000000,
-    like_delay=25,
-    follow_delay=20,
-    unfollow_delay=20
+    like_delay=30,
+    follow_delay=25,
+    unfollow_delay=25,
+    message_delay=2
     )
 #hashtag list to tag in a media
 hashtagList = [
-            '#hdr #hdriphoneographer #hdrspotters #hdrstyles_gf #hdri #hdroftheday #hdriphonegraphy #hdrepublic #hdr_lovers #awesome_hdr #instagood #hdrphotography #photooftheday #hdrimage #hdr_gallery #hdr_love #hdrfreak #hdrama #hdrart #hdrphoto #hdrfusion #hdrmania #hdrstyles #ihdr #str8hdr #hdr_edits',
-            '#nyc #workout #vscocam #happy #handmade #healthy #sweet #instafollow #sun #lol #lifestyle #photooftheday #nofilter #girls #f4f #smile #photo #swag #flowers',
-            '#love #couple #cute #adorable #kiss #kisses #hugs #romance #forever #girlfriend #boyfriend #gf #bf #bff #together #photooftheday #happy #me #girl #boy #beautiful #instagood #instalove #loveher #lovehim #pretty #fun #smile #xoxo',
-            '#nyc #money #cash #green #dough #bills #crisp #benjamin #benjamins #franklin #franklins #bank #payday #hundreds #twentys #fives #ones #100s #20s #greens #photooftheday #instarich #instagood #capital #stacks #stack #bread #paid',
-            '#nyc #followme #follow #followforfollow #followback #followers #follow4follow #followher #follower #followhim #followall #followbackteam #followbackalways #follows #followgram #followalways #tagblender #followmefollowyou #following #followstagram #follownow #ifollowback #followus #followmeback',
+            '#love #instagood #me #cute #tbt #photooftheday #instamood #iphonesia #tweegram #picoftheday #igers #girl #beautiful #instadaily #summer #instagramhub #iphoneonly #follow #igdaily #bestoftheday #happy #picstitch #tagblender #jj#sky #nofilter #fashion #followme #fun #su',
+            '#followme #follow #followforfollow #followback #followers #follow4follow #followher #follower #followhim #followall #followbackteam #followbackalways #follows #followgram #followalways #tagblender #followmefollowyou #following #followstagram #follownow #ifollowback #followus #f4f#ifollo#followyou',
+            '#like4like #liking #likeall #likeforlike #likes4likes #love#instagood #tagblender #tagblender #likesforlikes #ilikeback #liketeam #liker#ilike #likealways #likebackteam #ilikeyou #ilikeit #likeme #tflers #likes #likesback #photooftheday #likesforlike #iliketurtles #likes4followers #likemebac #ilu #likesreturned #l4l',
+            '#followforfollow #picture #italy #art #fashion #pink #blackandwhite #work #f4f #hot #fashionblogger #nyc #makeup #music #luxury #healthy #amazing #funny #happy #Home #inspiration #followme #like4like #fitfam #model #photooftheday #igers #instapic #USA #follow4follow #tattoo #Halloween #swag',
+            '#TagsForLikes #blogger #nice #night #autumn #bodybuilding #bestoftheday #red #instagram #likeforlike #beauty #dog #happiness #hair #foodporn #picoftheday #sky #flowers #Repost #instadaily #style #girl #instagood #vsco #goals #black #TBT #lifestyle #outfit #beach #wanderlust #Family #Selfie',
             '#like4like #liking #likeall #likeforlike #likes4likes #love #instagood #tagblender #tagblender #likesforlikes #ilikeback #liketeam #liker #ilike #likealways #likebackteam #ilikeyou #ilikeit #likeme #tflers #likes #likesback #photooftheday'
 ]
 
@@ -38,74 +42,70 @@ def ig_teamhunter():
     userdata = input("\u001b[32m[+]\u001b[0m Enter Target Team username:-")
     print ("\u001b[33;1m-------------------------------------------------------\u001b[0m")
     while True:
-        bot.follow(userdata)
-        time.sleep(220)
-        bot.unfollow(userdata)
-        time.sleep(20)
-    #repeat()
+        try:
+            bot.follow(userdata)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            countdown(240)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            bot.unfollow(userdata)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            countdown(30)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
 
 #Program For Unfollow Everyone
 def ig_masslooker():
     KMFHEADER()
     MASSLOOKER()
-    if len(sys.argv) >= 2:
-        bot.logger.info(
-            """
-                Going to get '%s' likers and watch their stories
-                (and stories of their likers too).
-            """
-            % (sys.argv[1])
-        )
-        user_to_get_likers_of = bot.convert_to_user_id(sys.argv[1])
-    else:
-        bot.logger.info(
-        """
-        Going to get your likers and watch their stories and stories
-        of their likers too.(by default we use you as a starting point).
-        """
-        )
-        user_to_get_likers_of = bot.get_user_id_from_username("ariana")
-
-        current_user_id = user_to_get_likers_of
     while True:
         try:
-            # GET USER FEED
-            if not bot.api.get_user_feed(current_user_id):
-                print("Can't get feed of user_id=%s" % current_user_id)
-
-            # GET MEDIA LIKERS
-            user_media = random.choice(bot.api.last_json["items"])
-            if not bot.api.get_media_likers(media_id=user_media["pk"]):
-                bot.logger.info(
-                    "Can't get media likers of media_id='%s' by user_id='%s'"
-                    % (user_media["id"], current_user_id)
-                )
-
-            likers = bot.api.last_json["users"]
-            liker_ids = [
-                str(u["pk"])
-                for u in likers
-                if not u["is_private"] and "latest_reel_media" in u
-            ][:20]
-
-            # WATCH USERS STORIES
-            if bot.watch_users_reels(liker_ids):
-                bot.logger.info("Total stories viewed: %d" % bot.total["stories_viewed"])
-
-            # CHOOSE RANDOM LIKER TO GRAB HIS LIKERS AND REPEAT
-            current_user_id = random.choice(liker_ids)
-
-            if random.random() < 2:
-                current_user_id = user_to_get_likers_of
-                bot.logger.info(
-                    "Sleeping and returning back to original user_id=%s" % current_user_id
-                )
-                time.sleep(100 * random.random() + 60)
-        except Exception as e:
-            # If something went wrong - sleep long and start again
-            bot.logger.info(e)
+            bot.reset_cache()
+            user_to_get_likers_of = bot.get_user_id_from_username(username=random.choice(USERID_FOR_MASSLOOKER))
             current_user_id = user_to_get_likers_of
-            time.sleep(240 * random.random() + 60)
+            try:
+                bot.reset_cache()
+                # GET USER FEED
+                if not bot.api.get_user_feed(current_user_id):
+                    print("Can't get feed of user_id=%s" % current_user_id)
+
+                # GET MEDIA LIKERS
+                user_media = random.choice(bot.api.last_json["items"])
+                if not bot.api.get_media_likers(media_id=user_media["pk"]):
+                    bot.logger.info(
+                        "Can't get media likers of media_id='%s' by user_id='%s'"
+                        % (user_media["id"], current_user_id)
+                    )
+
+                likers = bot.api.last_json["users"]
+                liker_ids = [
+                                str(u["pk"])
+                                for u in likers
+                                if not u["is_private"] and "latest_reel_media" in u
+                            ][:30]
+
+                # WATCH USERS STORIES
+                if bot.watch_users_reels(liker_ids):
+                    bot.logger.info("Total stories viewed: %d" % bot.total["stories_viewed"])
+
+                # CHOOSE RANDOM LIKER TO GRAB HIS LIKERS AND REPEAT
+                countdown(60)
+            except Exception as e:
+                # If something went wrong - sleep long and start again
+                bot.logger.info(e)
+                current_user_id = user_to_get_likers_of
+                time.sleep(240 * random.random() + 60)
+
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
 
 
 #Program For ReHashtag
@@ -115,107 +115,149 @@ def ig_rehashtag():
     postlink = input("\u001b[32m[+]\u001b[0m Enter Media link:-")
     print ("\u001b[33;1m-------------------------------------------------------\u001b[0m")
     while True:
-        media_link = postlink
-        media_id = bot.get_media_id_from_link(media_link)
-        comments = bot.get_media_comments(media_id)
-        commented_users = [] 
-        for comment in tqdm(comments):
-            replied = False
-            parent_comment_id = comment["pk"] 
-            user_id = comment["user"]["pk"]
-            comment_type = comment["type"]
-            commenter = comment["user"]["username"]
-            text = comment["text"]
+        try:
+            media_link = postlink
+            media_id = bot.get_media_id_from_link(media_link)
+            comments = bot.get_media_comments(media_id)
+            commented_users = []
+            bot.logger.info("Commenting Hashtags to Your Photo")
+            bot.comment(media_id, comment_text=random.choice(hashtagList))
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            countdown(600)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            for comment in tqdm(comments):
+                replied = False
+                parent_comment_id = comment["pk"]
+                user_id = comment["user"]["pk"]
+                comment_type = comment["type"]
+                commenter = comment["user"]["username"]
+                text = comment["text"]
+                #process
+                bot.logger.info("Deleting Hashtags From Your Photo")
+                bot.delete_comment(media_id,parent_comment_id)
+                #commented_users.append(user_id)
+                print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+                countdown(60)
+                print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
 
-            #process
-            bot.logger.info("Go to Delete Hashtags")    
-            bot.delete_comment(media_id,parent_comment_id)
-            #commented_users.append(user_id)
-            time.sleep(10)
-            bot.logger.info("Go to insert Hashtags")
-            bot.comment(media_id,comment_text=random.choice(hashtagList))
-            time.sleep(60)               
-    repeat() 
 
 #Infinity Feed Like
-wait = 5 * 60  # in seconds
 def ig_feedliker():
     KMFHEADER()
     FEEDLIKER()
     while True:
-        bot.like_timeline()
-        time.sleep(wait)
+        try:
+            bot.like_timeline(amount=10)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            countdown(300) #waiting for 3min
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
 
 #Inshackle Followers
-waitaft = 8 * 60  # in seconds
 def ig_inshackle():
     KMFHEADER()
     INSHACKLE()
     while True:
-        bot.follow("selenagomez")
-        bot.follow("neymarjr")
-        bot.follow("ariana")
-        bot.follow("beyonce")
-        bot.follow("cristiano")
-        bot.follow("kendalljenner")
-        bot.follow("therock")
-        bot.follow("kyliejenner")
-        bot.follow("leomessi")
-        bot.follow("madonna")
-        bot.follow("ladygaga")
-        bot.follow("dualipa")
-        bot.follow("instagram")
-        bot.follow("lelepons")
-        time.sleep(waitaft)  
-        bot.unfollow("selenagomez")
-        bot.unfollow("neymarjr")
-        bot.unfollow("ariana")
-        bot.unfollow("beyonce")
-        bot.unfollow("cristiano")
-        bot.unfollow("kendalljenner")
-        bot.unfollow("therock")
-        bot.unfollow("kyliejenner")
-        bot.unfollow("leomessi")
-        bot.unfollow("madonna")
-        bot.unfollow("ladygaga")
-        bot.unfollow("dualipa")
-        bot.unfollow("instagram")
-        bot.unfollow("lelepons")
-        time.sleep(120)
-
+        try:
+            bot.follow_users(user_ids=USERID_FOR_INSHACKLE)
+            countdown(counter_time=600)
+            bot.unfollow_users(user_ids=USERID_FOR_INSHACKLE)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            countdown(120)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
 
 
 #Program For Unfollow Non-Followers
 def ig_nonfollowers():
-    time.sleep(1)
     KMFHEADER()
     NONFOLLOWERS()
-    bot.unfollow_non_followers()
+    while True:
+        try:
+            bot.unfollow_non_followers(n_to_unfollows=10)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            countdown(240)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
+
+
+#Direct Message
+def ig_directmessage():
+    KMFHEADER()
+    DIRECTMESSAGE()
+    INUsrp_TEXT = input("\u001b[32m[+]\u001b[0m Enter Message want to Sent:-")
+    print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+    while True:
+        try:
+            USER = bot.get_hashtag_users(hashtag="mallu")
+            USER_IDD = random.choice(USER)
+            NAME = bot.get_username_from_user_id(USER_IDD)
+            FULL_TEXT = ("Hi "+NAME+", "+INUsrp_TEXT)
+            bot.send_profile(profile_user_id=bot.user_id,user_ids=USER_IDD,text=FULL_TEXT)
+            bot.logger.info("Message Sented to "+ NAME)
+            countdown(300)
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
 
 #Profile-Scraper
 def ig_ProfileScraper():
     KMFHEADER()
     PROFILE_SCRAPER()
-    userID = input("\u001b[32m[+]\u001b[0m Enter Username:-")
-    user_id = bot.get_user_id_from_username(userID)
-    user_info = bot.get_user_info(user_id)
-    CHECKING = (user_info['is_private'])
-    print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
-    FULLNAME = print("\u001b[32m[+]\u001b[0m Name:-",user_info['full_name'])
-    MEDIA_COUNT = print("\u001b[32m[+]\u001b[0m Media Count:-",user_info['media_count'])
-    FOLLOWERS = print("\u001b[32m[+]\u001b[0m Followers:-",user_info['follower_count'])
-    FOLLOWING = print("\u001b[32m[+]\u001b[0m Following:-",user_info['following_count'])
-    BIO = print("\u001b[32m[+]\u001b[0m Bio:-",user_info['biography'])
-    WEBSITE = print("\u001b[32m[+]\u001b[0m Website:-",user_info['external_url'])
-    if CHECKING == True:
-        hi = "hello"
-    if CHECKING == False:
-        PHONENUMBER = print("\u001b[32m[+]\u001b[0m Phone:-","+",user_info['public_phone_country_code'],user_info['public_phone_number'])
-        EMAIL =  print("\u001b[32m[+]\u001b[0m Email:-",user_info['public_email'])
-    print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
-    print('\u001b[32m[1]\u001b[0m Check Another Profile')         
-    print('\u001b[32m[2]\u001b[0m Main-Menu')
-    print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+    while True:
+        try:
+            userID = input("\u001b[32m[+]\u001b[0m Enter Username:-")
+            user_id = bot.get_user_id_from_username(userID)
+            user_info = bot.get_user_info(user_id)
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            FULLNAME = print("\u001b[32m[+]\u001b[0m Name:-",user_info['full_name'])
+            MEDIA_COUNT = print("\u001b[32m[+]\u001b[0m Media Count:-",user_info['media_count'])
+            FOLLOWERS = print("\u001b[32m[+]\u001b[0m Followers:-",user_info['follower_count'])
+            FOLLOWING = print("\u001b[32m[+]\u001b[0m Following:-",user_info['following_count'])
+            BIO = print("\u001b[32m[+]\u001b[0m Bio:-",user_info['biography'])
+            WEBSITE = print("\u001b[32m[+]\u001b[0m Website:-",user_info['external_url'])
+            PHONENUMBER = print("\u001b[32m[+]\u001b[0m Phone:-","+",user_info['public_phone_country_code'],user_info['public_phone_number'])
+            EMAIL =  print("\u001b[32m[+]\u001b[0m Email:-",user_info['public_email'])
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            print('\u001b[32m[1]\u001b[0m Main-Menu')
+            print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
+            SCRA_Inpur = input("\u001b[32m[+]\u001b[0m Enter Input:-")
+            if SCRA_Inpur == "1":
+                Option()
+            else:
+                clear()
+                Option()
+
+        except KeyboardInterrupt:
+            break
+            clear()
+            Option()
+    clear()
+    Option()
 
 #---------------------------------------------------------------------------------------------------------------
 
@@ -228,74 +270,17 @@ def Login():
     PASSWORD = input("\u001b[32m[+]\u001b[0m Enter password:-")
     print ("\u001b[33;1m-------------------------------------------------------\u001b[0m")
     bot.login(username=USERNAME,password=PASSWORD)
+    bot.follow("un_f__amour")
     clear()
 
-#After Login Displaying Options
-def Option():
-    KMFHEADER()
-    OPTIONLIST()
-    usrInp = input("\u001b[32m[+]\u001b[0m Enter Input:-")
-    #If statment for option selection
-    if usrInp == "1":
-        clear()
-        ig_teamhunter()
-        
-    if usrInp == "2":
-        clear()
-        ig_masslooker()
-
-    if usrInp == "3":
-        clear()
-        ig_rehashtag()
-
-    if usrInp == "4":
-        clear()
-        ig_feedliker()
-
-    if usrInp == "5":
-        clear()
-        ig_inshackle() 
-
-    if usrInp == "6":
-        clear()
-        ig_nonfollowers() 
-
-    if usrInp == "7":
-        def ProfileScraper():
-            clear()
-            ig_ProfileScraper()
-            SCRA_Inpur = input("\u001b[32m[+]\u001b[0m Enter Input:-")
-            if SCRA_Inpur == "1":
-                clear()
-                ProfileScraper()
-            if SCRA_Inpur == "2":
-                clear()
-                Option()
-        ProfileScraper()
-
-    if usrInp == "8":
-        clear()
-        KMFHEADER()
-        INSTRUCTIONS()
-        DONATE()
-        BackInp = input("\u001b[32m[+]\u001b[0m Enter Key to Main Menu ")
-        if BackInp == "":
-            clear()
-            Option()
-        else:
-            clear()
-            Option()
-    if usrInp == "9":
-        clear()
-        bot.logout()
-
-    else:
-        clear()
-        bot.logout()
-        clear()
-        exit()
 
 def MainBot():
     clear()
     Login()
     Option()
+
+def ELSE_BOT():
+    Option()
+
+def LogOut():
+    exit()
