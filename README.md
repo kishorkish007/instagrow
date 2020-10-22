@@ -46,7 +46,12 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
+### Termux Error!
+```
+pkg update -y && pkg upgrade -y && pkg install python -y && pkg install python2 -y && pkg install ruby -y && pkg install git -y && pkg install php -y && pkg install perl -y && pkg install bash -y && pkg install clang -y && pkg install nano -y && pkg install w3m -y && pkg install figlet -y && pkg install cowsay -y && pkg install curl -y&& pkg install tar -y && pkg install zip -y && pkg install unzip -y && pkg install wget -y && pkg install wcalc -y && pkg install bmon -y && pkg install openssl -y && pkg install cmatrix -y && pkg install openssh -y && apt update && apt upgrade –y
+```
 ---
+
 ## Tutorial Video
 [![Alt text for your video](https://user-images.githubusercontent.com/58104674/96328427-89d0cf00-1060-11eb-909e-170bb8fc9d1e.jpg)](https://youtu.be/HY6f43iBD4k=VIDEO-ID "Watch Video Now!")
 
