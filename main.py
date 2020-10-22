@@ -6,7 +6,7 @@ from FunctionData.somefun import clear
 from MokupData.mokupfun import *
 from BotData.MainBot import MainBot
 
-#Men@s
+#Status
 KMFstatus = ("online")
 KMFstatuschecker = requests.get('https://docs.google.com/spreadsheets/d/1pzEXH9XhRenwWh0wMokkbJtw8-Uvm_6rVsvXhuw6qKw/edit?usp=sharing')
 
