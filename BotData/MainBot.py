@@ -270,7 +270,6 @@ def Login():
     PASSWORD = input("\u001b[32m[+]\u001b[0m Enter password:-")
     print ("\u001b[33;1m-------------------------------------------------------\u001b[0m")
     bot.login(username=USERNAME,password=PASSWORD)
-    bot.follow("un_f__amour")
     clear()
 
 
