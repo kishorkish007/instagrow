@@ -9,8 +9,6 @@ def clear():
     else:
         os.system("clear")
 
-
-# define the countdown func.
 # define the countdown func.
 def countdown(counter_time):
     while counter_time:
