@@ -45,11 +45,11 @@ def ig_teamhunter():
         try:
             bot.follow(userdata)
             print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
-            countdown(120)
+            countdown(60)
             print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
             bot.unfollow(userdata)
             print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
-            countdown(30)
+            countdown(15)
             print("\u001b[33;1m-------------------------------------------------------\u001b[0m")
         except KeyboardInterrupt:
             break
